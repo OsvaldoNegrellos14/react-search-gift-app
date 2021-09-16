@@ -3,15 +3,19 @@ import { AddCategory } from './components/AddCategory'
 import { GifGrid } from './components/GifGrid'
 
 export const GifExpertApp = () => {
-  const [categories, setCategories] = useState(['One Punch'])
+  const [categories, setCategories] = useState([''])
 
   return (
     <>
-      <h2>GifExpertApp</h2>
+      <div className='home__title'>
+        <h1>Bucador de Gifs</h1>
+      </div>
+      <div className='home__subtitle'>
+        <p>Miles y miles de GIFS traidos por GIPHY</p>
+      </div>
       <AddCategory setCategories={setCategories} />
-      <hr />
 
-      <ul>
+      <ul className='home__container-gifs'>
         {
           categories.map((category) => (
             <GifGrid

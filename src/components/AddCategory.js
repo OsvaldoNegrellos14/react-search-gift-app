@@ -11,18 +11,20 @@ export const AddCategory = ({ setCategories }) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (inputValue.trim().length > 2) {
-      setCategories(categories => [inputValue, ...categories])
+      setCategories([inputValue])
       setInputValue('')
     }
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='home__form'>
       <input
+        placeholder='memes'
         type='text'
         value={inputValue}
         onChange={handleInputChange}
       />
+      <button onClick={handleSubmit} className='home__form-button'>Search</button>
     </form>
   )
 }
